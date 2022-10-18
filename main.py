@@ -8,8 +8,6 @@ with open('config.json', 'r') as config_file:
 
 url = "https://" + config['url'][config['url'].find("gradusi.net") + 0:]
 
-print(url)
-
 with open(config['path'] + config['filename'], 'a', newline='') as csvfile:
     products = BeautifulSoup(urlopen(url), features="html.parser").findAll(class_='products-of-the-day__item')
 
